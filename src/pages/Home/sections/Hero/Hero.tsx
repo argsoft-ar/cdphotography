@@ -16,9 +16,9 @@ export const Hero = () => {
         <div className="hero__content">
           <p className="hero__eyebrow">CD Photography</p>
           <h1 className="hero__title">
-            Capturando Momentos
+            Capturando momentos
             <br />
-            Que Duran Para Siempre
+            que duran para siempre
           </h1>
           <p className="hero__subtitle">
             Transformamos instantes fugaces en obras de arte atemporales.
