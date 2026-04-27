@@ -108,7 +108,7 @@ export const OurWork = () => {
     <section id="work" className="our-work">
       <div className="our-work__inner">
         <p className="our-work__eyebrow">Portafolio</p>
-        <h2 className="our-work__title">Nuestros Trabajos</h2>
+        <h2 className="our-work__title">Nuestros trabajos</h2>
         <p className="our-work__subtitle">
           Una selección curada de nuestras sesiones y proyectos más
           significativos.
