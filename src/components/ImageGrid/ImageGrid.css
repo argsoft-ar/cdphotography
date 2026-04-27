@@ -1,0 +1,44 @@
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns, 3), 1fr);
+  gap: var(--grid-gap, var(--spacing-md));
+  width: 100%;
+}
+
+.image-grid__item {
+  overflow: hidden;
+  opacity: 0;
+  animation: gridItemFadeIn 400ms ease forwards;
+  animation-delay: calc(var(--item-index, 0) * 80ms);
+}
+
+.image-grid__item:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+  transition:
+    transform var(--transition-normal),
+    filter var(--transition-normal);
+}
+
+@keyframes gridItemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
