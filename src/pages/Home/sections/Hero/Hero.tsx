@@ -6,8 +6,8 @@ export const Hero = () => {
   return (
     <section id="home" className="hero">
       <ImageContainer
-        publicId="hero_ffukxb"
-        alt="Fondo principal — fotografía de paisaje dramática"
+        publicId="FONDO_xwyqo5"
+        alt="Fondo principal"
         overlay
         overlayColor="rgba(255, 255, 255, 0.70)"
         height="100vh"
