@@ -21,9 +21,9 @@ export const Hero = () => {
             que duran para siempre
           </h1>
           <p className="hero__subtitle">
-            Transformamos instantes fugaces en obras de arte atemporales.
+            Fotos que te hacen volver a ese instante, una y otra vez.
             <br />
-            Fotografía de retrato, bodas y eventos creada con intención.
+            Fotografía de eventos y sesiones con una mirada natural y cuidada.
           </p>
           <div className="hero__actions">
             <Button variant="primary" size="lg">
