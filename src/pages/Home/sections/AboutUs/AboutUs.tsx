@@ -13,7 +13,7 @@ export const AboutUs = () => {
       <div className="about__inner">
         <div className="about__image">
           <ImageContainer
-            publicId="MARCA_PERSONAL_5_rkm57e"
+            publicId="FOTO_1B_amgp5o"
             alt="CD Photography — el fotógrafo en acción"
             height="100%"
           />
