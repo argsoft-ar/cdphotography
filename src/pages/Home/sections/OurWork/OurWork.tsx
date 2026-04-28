@@ -110,9 +110,13 @@ export const OurWork = () => {
         <p className="our-work__eyebrow">Portafolio</p>
         <h2 className="our-work__title">Nuestros trabajos</h2>
         <p className="our-work__subtitle">
-          Una selección curada de nuestras sesiones y proyectos más
-          significativos.
+          Una selección de trabajos que reflejan lo que más me gusta de la
+          fotografía: capturar momentos reales y convertirlos en recuerdos que
+          perduran en el tiempo.
+          <br /> Cada imagen cuenta una historia, y cada historia tiene algo
+          único.
         </p>
+
         <Tabs tabs={tabs} autoRotate interval={6000} />
       </div>
     </section>
