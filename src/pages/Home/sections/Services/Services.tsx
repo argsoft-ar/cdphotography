@@ -46,6 +46,8 @@ export const Services = () => {
               title={service.title}
               items={service.items}
               showButton
+              textButton="Consultanos"
+              href="#contact"
             />
           ))}
         </div>

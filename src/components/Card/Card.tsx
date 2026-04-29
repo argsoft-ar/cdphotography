@@ -11,8 +11,11 @@ interface CardProps {
   children?: React.ReactNode;
   className?: string;
   showButton?: boolean;
+  textButton?: string;
   buttonLabel?: string;
   loading?: boolean;
+  href?: string;
+  onClick?: () => void;
 }
 
 export const Card = ({
@@ -23,8 +26,11 @@ export const Card = ({
   children,
   className = "",
   showButton,
+  textButton,
   buttonLabel,
   loading,
+  href,
+  onClick,
 }: CardProps) => {
   if (loading) {
     return (
@@ -59,8 +65,22 @@ export const Card = ({
             ))
           : description && <p className="card__description">{description}</p>}
         {showButton && (
-          <Button variant="outline" size="sm">
-            {buttonLabel ?? "Ver Más"}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              if (onClick) onClick();
+              else if (href) {
+                const element = document.querySelector(href);
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  window.location.href = href;
+                }
+              }
+            }}
+          >
+            {textButton ?? buttonLabel ?? "Ver Más"}
           </Button>
         )}
         {children}
