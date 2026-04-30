@@ -2,17 +2,22 @@ import React from "react";
 import "./Card.css";
 import { ImageContainer } from "../ImageContainer/ImageContainer";
 import { Button } from "../Button/Button";
+import type { LucideIcon } from "lucide-react";
 
 interface CardProps {
   title?: string;
   description?: string;
   items?: string[];
   image?: string;
+  icon?: LucideIcon;
   children?: React.ReactNode;
   className?: string;
   showButton?: boolean;
+  textButton?: string;
   buttonLabel?: string;
   loading?: boolean;
+  href?: string;
+  onClick?: () => void;
 }
 
 export const Card = ({
@@ -20,11 +25,15 @@ export const Card = ({
   description,
   items,
   image,
+  icon: Icon,
   children,
   className = "",
   showButton,
+  textButton,
   buttonLabel,
   loading,
+  href,
+  onClick,
 }: CardProps) => {
   if (loading) {
     return (
@@ -50,7 +59,14 @@ export const Card = ({
         </div>
       )}
       <div className="card__body">
-        {title && <h3 className="card__title">{title}</h3>}
+        <div className="header__card">
+          {Icon && (
+            <div className="card__icon">
+              <Icon size={32} />
+            </div>
+          )}
+          {title && <h3 className="card__title">{title}</h3>}
+        </div>
         {items
           ? items.map((item) => (
               <p key={item} className="card__description">
@@ -59,8 +75,22 @@ export const Card = ({
             ))
           : description && <p className="card__description">{description}</p>}
         {showButton && (
-          <Button variant="outline" size="sm">
-            {buttonLabel ?? "Ver Más"}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              if (onClick) onClick();
+              else if (href) {
+                const element = document.querySelector(href);
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  window.location.href = href;
+                }
+              }
+            }}
+          >
+            {textButton ?? buttonLabel ?? "Ver Más"}
           </Button>
         )}
         {children}

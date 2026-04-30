@@ -27,6 +27,17 @@
   flex: 1;
 }
 
+.header__card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.card__icon {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
 .card__body > .btn {
   margin-top: auto;
 }

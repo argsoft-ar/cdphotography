@@ -2,16 +2,23 @@ import { useState } from "react";
 import "./ConnectWithMe.css";
 import { Button } from "../../../../components/Button/Button";
 import { BreadCrumb } from "../../../../components/BreadCrumb/BreadCrumb";
+import { MapPin, Phone, Users } from "lucide-react";
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "#" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/daicabellophotography",
+  },
   { label: "Facebook", href: "#" },
   { label: "Twitter", href: "#" },
   { label: "Pinterest", href: "#" },
 ];
 
 export const ConnectWithMe = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    message: "¡Hola! Me gustaría hacer una consulta.",
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -21,6 +28,10 @@ export const ConnectWithMe = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const phoneNumber = "5491140474775";
+    const text = `Hola, mi nombre es ${form.name}.\n\n${form.message}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -59,22 +70,6 @@ export const ConnectWithMe = () => {
             </div>
 
             <div className="connect__field">
-              <label htmlFor="email" className="connect__label">
-                Correo electrónico
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                className="connect__input"
-                placeholder="you@example.com"
-                value={form.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="connect__field">
               <label htmlFor="message" className="connect__label">
                 Mensaje
               </label>
@@ -97,15 +92,24 @@ export const ConnectWithMe = () => {
 
           <div className="connect__info">
             <div className="connect__info-block">
-              <h4 className="connect__info-heading">Correo electrónico</h4>
-              <p className="connect__info-text">hello@cdphotography.com</p>
+              <h4 className="connect__info-heading">
+                {" "}
+                <Phone size={20} /> WhatsApp
+              </h4>
+              <p className="connect__info-text">+54 9 11 4047-4775</p>
             </div>
             <div className="connect__info-block">
-              <h4 className="connect__info-heading">Ubicación</h4>
+              <h4 className="connect__info-heading">
+                {" "}
+                <MapPin size={20} /> Ubicación
+              </h4>
               <p className="connect__info-text">Buenos Aires, Argentina</p>
             </div>
             <div className="connect__info-block">
-              <h4 className="connect__info-heading">Seguinos</h4>
+              <h4 className="connect__info-heading">
+                {" "}
+                <Users size={20} /> Seguinos
+              </h4>
               <div className="connect__socials">
                 {SOCIAL_LINKS.map((link) => (
                   <a

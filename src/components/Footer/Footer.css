@@ -65,6 +65,19 @@ a.footer__link:hover {
   color: var(--color-text-muted);
 }
 
+.footer__credit {
+  margin-top: var(--spacing-sm);
+}
+
+.footer__credit-link {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.footer__credit-link:hover {
+  color: var(--color-text);
+}
+
 @media (max-width: 768px) {
   .footer__grid {
     grid-template-columns: 1fr 1fr;
