@@ -2,9 +2,13 @@ import { useState } from "react";
 import "./ConnectWithMe.css";
 import { Button } from "../../../../components/Button/Button";
 import { BreadCrumb } from "../../../../components/BreadCrumb/BreadCrumb";
+import { MapPin, Phone, Users } from "lucide-react";
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "#" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/daicabellophotography",
+  },
   { label: "Facebook", href: "#" },
   { label: "Twitter", href: "#" },
   { label: "Pinterest", href: "#" },
@@ -88,15 +92,24 @@ export const ConnectWithMe = () => {
 
           <div className="connect__info">
             <div className="connect__info-block">
-              <h4 className="connect__info-heading">WhatsApp</h4>
+              <h4 className="connect__info-heading">
+                {" "}
+                <Phone size={20} /> WhatsApp
+              </h4>
               <p className="connect__info-text">+54 9 11 4047-4775</p>
             </div>
             <div className="connect__info-block">
-              <h4 className="connect__info-heading">Ubicación</h4>
+              <h4 className="connect__info-heading">
+                {" "}
+                <MapPin size={20} /> Ubicación
+              </h4>
               <p className="connect__info-text">Buenos Aires, Argentina</p>
             </div>
             <div className="connect__info-block">
-              <h4 className="connect__info-heading">Seguinos</h4>
+              <h4 className="connect__info-heading">
+                {" "}
+                <Users size={20} /> Seguinos
+              </h4>
               <div className="connect__socials">
                 {SOCIAL_LINKS.map((link) => (
                   <a

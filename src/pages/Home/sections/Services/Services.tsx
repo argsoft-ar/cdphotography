@@ -1,9 +1,17 @@
 import "./Services.css";
 import { Card } from "../../../../components/Card/Card";
+import { Camera, Heart, Aperture, type LucideIcon } from "lucide-react";
 
-const SERVICES = [
+interface Service {
+  title: string;
+  items: string[];
+  icon: LucideIcon;
+}
+
+const SERVICES: Service[] = [
   {
     title: "Eventos",
+    icon: Camera,
     items: [
       "Fotografía de eventos pensada para registrar lo más importante: emociones, risas y esos momentos que pasan rápido pero con las fotos, te quedan para siempre.",
       "Cobertura flexible según el tipo de evento, con una selección cuidada de imágenes editadas para que tengas un recuerdo auténtico de cada celebración.",
@@ -11,12 +19,14 @@ const SERVICES = [
   },
   {
     title: "Sesiones",
+    icon: Heart,
     items: [
       "Sesiones pensadas para disfrutar el momento y transformarlo en recuerdo: 15, parejas, familias, peques y maternidad en exteriores. Se trabaja con luz natural y un enfoque relajado, buscando imágenes espontáneas, reales y llenas de emoción.",
     ],
   },
   {
     title: "Sesiones en estudio",
+    icon: Aperture,
     items: [
       "Un espacio cuidado donde cada detalle está pensado y controlado: iluminación, comodidad y un entorno ideal para lograr imágenes prolijas y atemporales.Incluye sesiones infantiles, maternidad y propuestas personalizadas según cada etapa",
     ],
@@ -44,6 +54,7 @@ export const Services = () => {
               key={service.title}
               className="services__card"
               title={service.title}
+              icon={service.icon}
               items={service.items}
               showButton
               textButton="Consultanos"

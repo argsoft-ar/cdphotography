@@ -2,12 +2,14 @@ import React from "react";
 import "./Card.css";
 import { ImageContainer } from "../ImageContainer/ImageContainer";
 import { Button } from "../Button/Button";
+import type { LucideIcon } from "lucide-react";
 
 interface CardProps {
   title?: string;
   description?: string;
   items?: string[];
   image?: string;
+  icon?: LucideIcon;
   children?: React.ReactNode;
   className?: string;
   showButton?: boolean;
@@ -23,6 +25,7 @@ export const Card = ({
   description,
   items,
   image,
+  icon: Icon,
   children,
   className = "",
   showButton,
@@ -56,7 +59,14 @@ export const Card = ({
         </div>
       )}
       <div className="card__body">
-        {title && <h3 className="card__title">{title}</h3>}
+        <div className="header__card">
+          {Icon && (
+            <div className="card__icon">
+              <Icon size={32} />
+            </div>
+          )}
+          {title && <h3 className="card__title">{title}</h3>}
+        </div>
         {items
           ? items.map((item) => (
               <p key={item} className="card__description">

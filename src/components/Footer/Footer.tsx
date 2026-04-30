@@ -81,6 +81,17 @@ export const Footer = () => {
 
         <div className="footer__bottom">
           <p>&copy; {year} CD Photography. Todos los derechos reservados.</p>
+          <p className="footer__credit">
+            Desarrollado por{" "}
+            <a
+              href="https://argsoft.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__credit-link"
+            >
+              Argsoft.ar
+            </a>
+          </p>
         </div>
       </div>
     </footer>
