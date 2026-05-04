@@ -22,7 +22,9 @@ export const ImageGrid = ({
   gap = "var(--spacing-md)",
   className = "",
 }: ImageGridProps) => {
-  const [selectedImage, setSelectedImage] = useState<ImageGridItem | null>(null);
+  const [selectedImage, setSelectedImage] = useState<ImageGridItem | null>(
+    null,
+  );
 
   return (
     <>
@@ -51,11 +53,11 @@ export const ImageGrid = ({
           </div>
         ))}
       </div>
-      
+
       {selectedImage && (
-        <ImagePopup 
-          image={selectedImage} 
-          onClose={() => setSelectedImage(null)} 
+        <ImagePopup
+          image={selectedImage}
+          onClose={() => setSelectedImage(null)}
         />
       )}
     </>

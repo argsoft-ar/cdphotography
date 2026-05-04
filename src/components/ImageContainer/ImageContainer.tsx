@@ -57,10 +57,10 @@ export const ImageContainer = ({
 
   return (
     <div
-      className={`image-container ${className} ${onClick ? 'clickable' : ''}`.trim()}
+      className={`image-container ${className} ${onClick ? "clickable" : ""}`.trim()}
       style={{
         height,
-        cursor: onClick ? 'pointer' : 'auto',
+        cursor: onClick ? "pointer" : "auto",
         ...(!useCloudinary && src ? { backgroundImage: `url(${src})` } : {}),
       }}
       role="img"
@@ -73,7 +73,11 @@ export const ImageContainer = ({
           cldImg={cldImage}
           alt={alt}
           className="image-container__img"
-          plugins={priority ? [placeholder({ mode: "blur" })] : [lazyload(), placeholder({ mode: "blur" })]}
+          plugins={
+            priority
+              ? [placeholder({ mode: "blur" })]
+              : [lazyload(), placeholder({ mode: "blur" })]
+          }
           onLoad={() => setLoaded(true)}
         />
       )}

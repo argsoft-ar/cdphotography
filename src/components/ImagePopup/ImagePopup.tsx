@@ -22,11 +22,15 @@ export const ImagePopup = ({ image, onClose }: ImagePopupProps) => {
 
   return (
     <div className="image-popup" onClick={onClose}>
-      <button className="image-popup__close" onClick={onClose} aria-label="Cerrar imagen">
+      <button
+        className="image-popup__close"
+        onClick={onClose}
+        aria-label="Cerrar imagen"
+      >
         ✕
       </button>
-      <div 
-        className="image-popup__content" 
+      <div
+        className="image-popup__content"
         onClick={(e) => e.stopPropagation()}
       >
         <ImageContainer
