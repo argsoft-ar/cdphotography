@@ -16,8 +16,6 @@ interface ImageContainerProps {
   imageWidth?: number;
   className?: string;
   children?: React.ReactNode;
-  onClick?: () => void;
-  priority?: boolean;
 }
 
 export const ImageContainer = ({
@@ -30,8 +28,6 @@ export const ImageContainer = ({
   imageWidth = 600,
   className = "",
   children,
-  onClick,
-  priority = false,
 }: ImageContainerProps) => {
   const [loaded, setLoaded] = useState(false);
   const useCloudinary = !!publicId;
@@ -57,15 +53,13 @@ export const ImageContainer = ({
 
   return (
     <div
-      className={`image-container ${className} ${onClick ? "clickable" : ""}`.trim()}
+      className={`image-container ${className}`.trim()}
       style={{
         height,
-        cursor: onClick ? "pointer" : "auto",
         ...(!useCloudinary && src ? { backgroundImage: `url(${src})` } : {}),
       }}
       role="img"
       aria-label={alt}
-      onClick={onClick}
     >
       {!loaded && <div className="image-container__skeleton" />}
       {cldImage && (
@@ -73,11 +67,7 @@ export const ImageContainer = ({
           cldImg={cldImage}
           alt={alt}
           className="image-container__img"
-          plugins={
-            priority
-              ? [placeholder({ mode: "blur" })]
-              : [lazyload(), placeholder({ mode: "blur" })]
-          }
+          plugins={[lazyload(), placeholder({ mode: "blur" })]}
           onLoad={() => setLoaded(true)}
         />
       )}
