@@ -11,13 +11,13 @@ const CATEGORIES = [
       { publicId: "BODAS_2_ay8pa9", alt: "Fotografía de retrato 3" },
       { publicId: "BODAS_10_zuht3h", alt: "Fotografía de retrato 4" },
       { publicId: "BODAS_9_uf2wcw", alt: "Fotografía de retrato 5" },
-      { publicId: "BODAS_7_nearng", alt: "Fotografía de retrato 6" },
+      { publicId: "BODA_7_od53so", alt: "Fotografía de retrato 6" },
     ],
   },
   {
     label: "Cumpleaños",
     images: [
-      { publicId: "CUMPLES_7_qxrf3k", alt: "Fotografía de boda 1" },
+      { publicId: "CUMPLE_8_yibmsw", alt: "Fotografía de boda 1" },
       { publicId: "CUMPLES_8_bie2ii", alt: "Fotografía de boda 2" },
       { publicId: "CUMPLES_5_khkyux", alt: "Fotografía de boda 3" },
       { publicId: "CUMPLES_3_zb9zap", alt: "Fotografía de boda 4" },

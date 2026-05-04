@@ -9,9 +9,10 @@ const SOCIAL_LINKS = [
     label: "Instagram",
     href: "https://www.instagram.com/daicabellophotography",
   },
-  { label: "Facebook", href: "#" },
-  { label: "Twitter", href: "#" },
-  { label: "Pinterest", href: "#" },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@phdaicabello?_t=8laBG78NzVd&_r=1",
+  },
 ];
 
 export const ConnectWithMe = () => {
@@ -28,7 +29,7 @@ export const ConnectWithMe = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = "5491140474775";
+    const phoneNumber = "5491123987786";
     const text = `Hola, mi nombre es ${form.name}.\n\n${form.message}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, "_blank");
@@ -46,8 +47,8 @@ export const ConnectWithMe = () => {
           <p className="connect__eyebrow">Hola</p>
           <h2 className="connect__title">Conectemos</h2>
           <p className="connect__subtitle">
-            ¿Tenés un proyecto en mente o simplemente querés charlar? Escribinos
-            y te responderemos lo antes posible.
+            ¿Tenés un proyecto en mente o simplemente querés charlar? Escribime
+            y te responderé lo antes posible.
           </p>
         </div>
 
@@ -96,7 +97,7 @@ export const ConnectWithMe = () => {
                 {" "}
                 <Phone size={20} /> WhatsApp
               </h4>
-              <p className="connect__info-text">+54 9 11 4047-4775</p>
+              <p className="connect__info-text">+54 9 11 2398-7786</p>
             </div>
             <div className="connect__info-block">
               <h4 className="connect__info-heading">

@@ -11,14 +11,17 @@ const SERVICES_LINKS = [
   "Fotografía de Retrato",
   "Fotografía de Bodas",
   "Cobertura de Eventos",
-  "Edición de Fotos",
 ];
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "Twitter", href: "#" },
-  { label: "Pinterest", href: "#" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/daicabellophotography",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@phdaicabello?_t=8laBG78NzVd&_r=1",
+  },
 ];
 
 export const Footer = () => {
