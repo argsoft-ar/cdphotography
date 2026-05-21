@@ -34,7 +34,7 @@
 
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -51,12 +51,33 @@
 
 @media (max-width: 1024px) {
   .services__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 600px) {
+  .services__inner {
+    padding-right: 0;
+  }
+
   .services__grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--spacing-lg);
+    padding-right: var(--spacing-xl);
+    padding-bottom: var(--spacing-sm);
+    scrollbar-width: none;
+  }
+
+  .services__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services__card {
+    min-width: 75vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
   }
 }

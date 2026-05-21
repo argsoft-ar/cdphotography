@@ -25,6 +25,12 @@
   margin-bottom: var(--spacing-xl);
 }
 
+.loading__logo {
+  width: 400px;
+  height: auto;
+  margin-bottom: var(--spacing-lg);
+}
+
 .loading__spinner {
   width: 48px;
   height: 2px;

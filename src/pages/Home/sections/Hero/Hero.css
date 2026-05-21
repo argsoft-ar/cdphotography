@@ -12,6 +12,11 @@
   gap: var(--spacing-lg);
 }
 
+.logo__image {
+  width: 400px;
+  height: auto;
+}
+
 .hero__eyebrow {
   font-family: var(--font-family-base);
   font-size: var(--font-size-sm);

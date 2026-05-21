@@ -57,7 +57,7 @@ export const Services = () => {
               icon={service.icon}
               items={service.items}
               showButton
-              textButton="Consultanos"
+              textButton="Consultame"
               href="#contact"
             />
           ))}

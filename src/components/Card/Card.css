@@ -6,9 +6,13 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  padding: var(--spacing-sm);
+  gap: var(--spacing-sm);
   transition:
     transform var(--transition-normal),
     box-shadow var(--transition-normal);
+  max-width: 350px;
+  min-height: 450px;
 }
 
 .card:hover {
@@ -51,9 +55,10 @@
 }
 
 .card__description {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   color: var(--color-text-muted);
   line-height: 1.6;
+  padding-top: var(--spacing-xs);
 }
 
 .card__items-wrapper {

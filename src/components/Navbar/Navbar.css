@@ -8,6 +8,22 @@
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
+.navbar--transparent {
+  background-color: transparent;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+}
+
+.navbar__logo {
+  width: 100px;
+  height: auto;
+  margin-right: var(--spacing-sm);
 }
 
 .navbar__inner {

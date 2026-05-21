@@ -1,5 +1,6 @@
 import "./Hero.css";
 import { ImageContainer } from "../../../../components/ImageContainer/ImageContainer";
+import logo from "../../../../../public/logo.png";
 import { Button } from "../../../../components/Button/Button";
 
 export const Hero = () => {
@@ -14,7 +15,7 @@ export const Hero = () => {
         imageWidth={1920}
       >
         <div className="hero__content">
-          <p className="hero__eyebrow">CD Photography</p>
+          <img className="logo__image" src={logo} alt="CD Photography Logo" />
           <h1 className="hero__title">
             Capturando momentos
             <br />

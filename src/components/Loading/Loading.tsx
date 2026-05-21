@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "../../../public/logo.png";
 import "./Loading.css";
 
 export const Loading = () => {
@@ -23,7 +24,7 @@ export const Loading = () => {
       className={`loading${hidden ? " loading--hidden" : ""}`}
       onTransitionEnd={() => setRemoved(true)}
     >
-      <span className="loading__brand">CD Photography</span>
+      <img src={logo} alt="CD Photography Logo" className="loading__logo" />
       <div className="loading__spinner" />
     </div>
   );
