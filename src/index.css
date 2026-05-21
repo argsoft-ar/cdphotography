@@ -1,27 +1,35 @@
+@font-face {
+  font-family: "Apollo";
+  src: url("/fonts/APOLLO.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ==============================
    CSS Reset & Global Variables
    ============================== */
 
 :root {
   /* Colors — Light Photography Theme */
-  --color-bg: #ffffff;
-  --color-bg-alt: #f5f5f5;
+  --color-bg: #ebeada;
+  --color-bg-alt: #dbccb9;
   --color-bg-elevated: #ebebeb;
-  --color-primary: #2a2a2a;
-  --color-primary-hover: #000000;
+  --color-primary: #ba5337;
+  --color-primary-hover: #a93a28;
   --color-primary-muted: rgba(59, 48, 13, 0.76);
   --color-secondary: #2a2a2a;
   --color-secondary-hover: #000000;
-  --color-text: #1a1a1a;
-  --color-text-muted: #181818;
+  --color-text: #c38842;
+  --color-text-muted: #a93a28;
   --color-text-inverse: #ffffff;
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-shadow-strong: rgba(0, 0, 0, 0.25);
   --color-border: rgba(0, 0, 0, 0.08);
 
   /* Typography */
-  --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
-  --font-family-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-family-base: "Nunito Sans", sans-serif;
+  --font-family-heading: "Apollo", serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;

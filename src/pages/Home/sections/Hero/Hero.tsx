@@ -9,7 +9,7 @@ export const Hero = () => {
         publicId="FONDO_xwyqo5"
         alt="Fondo principal"
         overlay
-        overlayColor="rgba(255, 255, 255, 0.70)"
+        overlayColor="rgba(255, 255, 255, 0.78)"
         height="100vh"
         imageWidth={1920}
       >
