@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import logo from "../../../public/navbar.png";
 import "./Navbar.css";
 
@@ -12,19 +12,9 @@ const NAV_LINKS = [
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsAtTop(window.scrollY === 0);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header className={`navbar${isAtTop ? " navbar--transparent" : ""}`}>
+    <header className="navbar">
       <div className="navbar__inner">
         <a href="#home" className="navbar__brand">
           <img src={logo} alt="CD Photography Logo" className="navbar__logo" />
