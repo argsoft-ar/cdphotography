@@ -38,6 +38,8 @@ export const ConnectWithMe = () => {
   return (
     <section id="contact" className="connect">
       <div className="connect__inner">
+        <div className="span__line"></div>
+
         <BreadCrumb
           items={[{ label: "Inicio", href: "#home" }, { label: "Contacto" }]}
           className="connect__breadcrumb"

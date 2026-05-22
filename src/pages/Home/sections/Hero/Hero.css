@@ -12,6 +12,11 @@
   gap: var(--spacing-lg);
 }
 
+.logo__image {
+  width: 400px;
+  height: auto;
+}
+
 .hero__eyebrow {
   font-family: var(--font-family-base);
   font-size: var(--font-size-sm);
@@ -25,13 +30,13 @@
   font-family: var(--font-family-heading);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text);
+  color: var(--color-primary);
   line-height: 1.1;
 }
 
 .hero__subtitle {
   font-size: var(--font-size-lg);
-  color: var(--color-text-muted);
+  color: var(--colort-text-black);
   line-height: 1.7;
   max-width: 600px;
 }

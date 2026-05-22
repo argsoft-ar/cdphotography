@@ -83,7 +83,7 @@ El proyecto utiliza un sistema de design tokens definido en `index.css` con vari
 | **Hero**            | Banner a pantalla completa con imagen de Cloudinary y botones CTA                          |
 | **Our Work**        | Portfolio con tabs auto-rotativas (Bodas, Cumpleaños, Marca Personal, Quinces, Maternidad) |
 | **Services**        | Grilla de tarjetas con tres categorías: Eventos, Sesiones y Estudio                        |
-| **About Us**        | Layout dividido con foto, bio y estadísticas (500+ sesiones, 10 años, 200+ clientes)       |
+| **About Us**        | Layout dividido con foto, bio y estadísticas (500+ sesiones, 10 años, 500+ clientes)       |
 | **Connect With Me** | Formulario de contacto con validación y datos de contacto / redes sociales                 |
 
 ## Componentes destacados

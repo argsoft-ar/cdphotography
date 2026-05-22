@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../../../public/navbar.png";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -16,7 +17,7 @@ export const Navbar = () => {
     <header className="navbar">
       <div className="navbar__inner">
         <a href="#home" className="navbar__brand">
-          CD Photography
+          <img src={logo} alt="CD Photography Logo" className="navbar__logo" />
         </a>
 
         <button

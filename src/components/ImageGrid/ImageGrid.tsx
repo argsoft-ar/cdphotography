@@ -1,3 +1,4 @@
+import React from "react";
 import "./ImageGrid.css";
 import { ImageContainer } from "../ImageContainer/ImageContainer";
 
@@ -11,6 +12,7 @@ interface ImageGridProps {
   images: ImageGridItem[];
   columns?: number;
   gap?: string;
+  imageHeight?: number;
   className?: string;
 }
 
@@ -18,6 +20,7 @@ export const ImageGrid = ({
   images,
   columns = 3,
   gap = "var(--spacing-md)",
+  imageHeight = 500,
   className = "",
 }: ImageGridProps) => {
   return (
@@ -41,6 +44,7 @@ export const ImageGrid = ({
             publicId={image.publicId}
             alt={image.alt}
             height="300px"
+            imageHeight={imageHeight}
           />
         </div>
       ))}

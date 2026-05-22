@@ -1,6 +1,15 @@
 .connect {
   padding: var(--spacing-4xl) 0;
-  background-color: var(--color-bg-alt);
+  background-color: var(--color-bg);
+}
+
+.span__line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1px;
+  background-color: var(--color-primary);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .connect__inner {

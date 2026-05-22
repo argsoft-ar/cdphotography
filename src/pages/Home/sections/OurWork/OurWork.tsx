@@ -6,50 +6,50 @@ const CATEGORIES = [
   {
     label: "Bodas",
     images: [
-      { publicId: "BODAS_11_eous9y", alt: "Fotografía de retrato 1" },
-      { publicId: "BODAS_3_lgihic", alt: "Fotografía de retrato 2" },
-      { publicId: "BODAS_2_ay8pa9", alt: "Fotografía de retrato 3" },
-      { publicId: "BODAS_10_zuht3h", alt: "Fotografía de retrato 4" },
-      { publicId: "BODAS_9_uf2wcw", alt: "Fotografía de retrato 5" },
-      { publicId: "BODA_7_od53so", alt: "Fotografía de retrato 6" },
+      { publicId: "FOTO_1_kqwtzf", alt: "Fotografía de retrato 1" },
+      { publicId: "FOTO_2_lmm4ik", alt: "Fotografía de retrato 2" },
+      { publicId: "FOTO_3_v4kckt", alt: "Fotografía de retrato 3" },
+      { publicId: "FOTO_4_zdmhwg", alt: "Fotografía de retrato 4" },
+      { publicId: "FOTO_5_d7imhi", alt: "Fotografía de retrato 5" },
+      { publicId: "FOTO_6_e8twqz", alt: "Fotografía de retrato 6" },
     ],
   },
   {
     label: "Cumpleaños",
     images: [
-      { publicId: "CUMPLE_8_yibmsw", alt: "Fotografía de boda 1" },
-      { publicId: "CUMPLES_8_bie2ii", alt: "Fotografía de boda 2" },
-      { publicId: "CUMPLES_5_khkyux", alt: "Fotografía de boda 3" },
-      { publicId: "CUMPLES_3_zb9zap", alt: "Fotografía de boda 4" },
-      { publicId: "CUMPLES_6_wzlqge", alt: "Fotografía de boda 5" },
-      { publicId: "CUMPLES_2_sk2ypw", alt: "Fotografía de boda 6" },
+      { publicId: "CUMPLES_FOTO_1_zmxp5r", alt: "Fotografía de boda 1" },
+      { publicId: "CUMPLES_FOTO_2_q1trg5", alt: "Fotografía de boda 2" },
+      { publicId: "CUMPLES_FOTO_3_g0cckw", alt: "Fotografía de boda 3" },
+      { publicId: "CUMPLES_FOTO_4_ehvhgi", alt: "Fotografía de boda 4" },
+      { publicId: "CUMPLES_FOTO_5_f5sb1t", alt: "Fotografía de boda 5" },
+      { publicId: "CUMPLES_FOTO_6_vstdjv", alt: "Fotografía de boda 6" },
     ],
   },
   {
     label: "Marca Personal",
     images: [
       {
-        publicId: "MARCA_PERSONAL_1_dr5h96",
+        publicId: "MARCA_PERS_FOTO_1_akdkd2",
         alt: "Fotografía de naturaleza 1",
       },
       {
-        publicId: "MARCA_PERSONAL_2_smai21",
+        publicId: "MARCA_PERS_FOTO_2_pwpy7f",
         alt: "Fotografía de naturaleza 2",
       },
       {
-        publicId: "MARCA_PERSONAL_6_mh8wur",
+        publicId: "MARCA_PERS_FOTO_3_ewcbyf",
         alt: "Fotografía de naturaleza 3",
       },
       {
-        publicId: "MARCA_PERSONAL_8_lspvvp",
+        publicId: "MARCA_PERS_FOTO_4_j3cldd",
         alt: "Fotografía de naturaleza 4",
       },
       {
-        publicId: "MARCA_PERSONAL_3_k4mwho",
+        publicId: "MARCA_PERS_FOTO_5_b5daan",
         alt: "Fotografía de naturaleza 5",
       },
       {
-        publicId: "MARCA_PERSONAL_7_d7qkou",
+        publicId: "MARCA_PERS_FOTO_6_ji5xz1",
         alt: "Fotografía de naturaleza 6",
       },
     ],
@@ -57,39 +57,39 @@ const CATEGORIES = [
   {
     label: "Quinces",
     images: [
-      { publicId: "QUINCES_2_wrh2iv", alt: "Fotografía de evento 1" },
-      { publicId: "QUINCES_3_ocdoco", alt: "Fotografía de evento 2" },
-      { publicId: "QUINCES_1_dw1q3e", alt: "Fotografía de evento 3" },
-      { publicId: "QUINCES_4_wyjswx", alt: "Fotografía de evento 4" },
-      { publicId: "QUINCES_6_xo10o7", alt: "Fotografía de evento 5" },
-      { publicId: "QUINCES_9_elicab", alt: "Fotografía de evento 6" },
+      { publicId: "QUINCES_FOTO_1_ilrfre", alt: "Fotografía de evento 1" },
+      { publicId: "QUINCES_FOTO_2_tybs7c", alt: "Fotografía de evento 2" },
+      { publicId: "QUINCES_FOTO_3_tgjgcm", alt: "Fotografía de evento 3" },
+      { publicId: "QUINCES_FOTO_4_qaa6ok", alt: "Fotografía de evento 4" },
+      { publicId: "QUINCES_FOTO_5_b0twq6", alt: "Fotografía de evento 5" },
+      { publicId: "QUINCES_FOTO_6_re6oje", alt: "Fotografía de evento 6" },
     ],
   },
   {
     label: "Sesiones de maternidad",
     images: [
       {
-        publicId: "SESION_MATERNIDAD_MALU_Y_JULI_42_kfmgoz",
+        publicId: "MATERNIDAD_1_garr0y",
         alt: "Fotografía de evento 1",
       },
       {
-        publicId: "ORNE_FACU_Y_GUADI_23_fq65ty",
+        publicId: "MATERNIDAD_2_bdjirf",
         alt: "Fotografía de evento 2",
       },
       {
-        publicId: "ORNE_FACU_Y_GUADI_41_i60s1w",
+        publicId: "MATERNIDAD_3_dib9nt",
         alt: "Fotografía de evento 3",
       },
       {
-        publicId: "SESION_MATERNIDAD_MALU_Y_JULI_21_yvzdtl",
+        publicId: "MATERNIDAD_4_zlyqom",
         alt: "Fotografía de evento 4",
       },
       {
-        publicId: "SESION_MATERNIDAD_JACKY_41_ohsvnn",
+        publicId: "MATERNIDAD_5_jp4lvp",
         alt: "Fotografía de evento 5",
       },
       {
-        publicId: "SESION_MATERNIDAD_MALU_Y_JULI_11_lkswhl",
+        publicId: "MATERNIDAD_6_fzbldy",
         alt: "Fotografía de evento 6",
       },
     ],

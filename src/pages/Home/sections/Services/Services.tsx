@@ -1,6 +1,13 @@
+import { useState, useEffect } from "react";
 import "./Services.css";
 import { Card } from "../../../../components/Card/Card";
-import { Camera, Heart, Aperture, type LucideIcon } from "lucide-react";
+import {
+  Camera,
+  Heart,
+  Aperture,
+  type LucideIcon,
+  ArrowRight,
+} from "lucide-react";
 
 interface Service {
   title: string;
@@ -34,6 +41,16 @@ const SERVICES: Service[] = [
 ];
 
 export const Services = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 600px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   return (
     <section id="services" className="services">
       <div className="services__inner">
@@ -48,6 +65,17 @@ export const Services = () => {
           mirada estética y cuidada.
         </p>
 
+        {isMobile && (
+          <div className="arrow__icon">
+            <p className="arrow__text">Deslizá para ver mis servicios</p>
+            <ArrowRight
+              size={20}
+              color="var(--color-primary)"
+              className="arrow__icon-svg"
+            />
+          </div>
+        )}
+
         <div className="services__grid">
           {SERVICES.map((service) => (
             <Card
@@ -57,7 +85,7 @@ export const Services = () => {
               icon={service.icon}
               items={service.items}
               showButton
-              textButton="Consultanos"
+              textButton="Consultame"
               href="#contact"
             />
           ))}

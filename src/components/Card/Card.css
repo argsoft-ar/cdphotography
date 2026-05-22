@@ -1,18 +1,23 @@
 .card {
-  background-color: var(--color-bg-elevated);
+  background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  padding: var(--spacing-sm);
+  gap: var(--spacing-sm);
   transition:
     transform var(--transition-normal),
     box-shadow var(--transition-normal);
+  max-width: 350px;
+  min-height: 450px;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px var(--color-shadow-strong);
+  box-shadow: 0 8px 16px var(--color-shadow-strong);
 }
 
 .card__image {
@@ -50,9 +55,10 @@
 }
 
 .card__description {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   color: var(--color-text-muted);
   line-height: 1.6;
+  padding-top: var(--spacing-xs);
 }
 
 .card__items-wrapper {
