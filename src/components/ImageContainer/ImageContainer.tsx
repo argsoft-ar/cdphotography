@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AdvancedImage, lazyload, placeholder } from "@cloudinary/react";
-import { auto } from "@cloudinary/url-gen/actions/resize";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 import { autoGravity } from "@cloudinary/url-gen/qualifiers/gravity";
 import { format, quality } from "@cloudinary/url-gen/actions/delivery";
 import { cld } from "../../lib/cloudinary";
@@ -14,6 +14,7 @@ interface ImageContainerProps {
   overlayColor?: string;
   height?: string;
   imageWidth?: number;
+  imageHeight?: number;
   className?: string;
   children?: React.ReactNode;
 }
@@ -26,6 +27,7 @@ export const ImageContainer = ({
   overlayColor = "rgba(0, 0, 0, 0.5)",
   height = "400px",
   imageWidth = 600,
+  imageHeight,
   className = "",
   children,
 }: ImageContainerProps) => {
@@ -37,7 +39,11 @@ export const ImageContainer = ({
         .image(publicId)
         .delivery(format("auto"))
         .delivery(quality("auto"))
-        .resize(auto().gravity(autoGravity()).width(imageWidth))
+        .resize(
+          imageHeight
+            ? fill().gravity(autoGravity()).width(imageWidth).height(imageHeight)
+            : fill().gravity(autoGravity()).width(imageWidth)
+        )
     : null;
 
   useEffect(() => {
