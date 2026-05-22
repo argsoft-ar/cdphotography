@@ -34,6 +34,7 @@
   color: var(--color-text-muted);
   line-height: 1.7;
   max-width: 320px;
+  text-align: center;
 }
 
 .footer__heading {

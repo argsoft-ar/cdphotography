@@ -40,7 +40,7 @@ export const Footer = () => {
             />
             <p className="footer__tagline">
               Capturando los momentos más hermosos de la vida con arte y
-              precisión. Con base en Buenos Aires, disponibles en todo el mundo.
+              precisión.
             </p>
           </div>
 
