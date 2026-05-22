@@ -35,7 +35,7 @@ const SERVICES: Service[] = [
     title: "Sesiones en estudio",
     icon: Aperture,
     items: [
-      "Un espacio cuidado donde cada detalle está pensado y controlado: iluminación, comodidad y un entorno ideal para lograr imágenes prolijas y atemporales.Incluye sesiones infantiles, maternidad y propuestas personalizadas según cada etapa",
+      "Un espacio cuidado donde cada detalle está pensado para lograr imágenes prolijas y atemporales. Ideal para sesiones personales, infantiles y de maternidad, así como fotografía de marca personal y productos para emprendedores.",
     ],
   },
 ];

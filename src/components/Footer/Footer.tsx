@@ -12,6 +12,8 @@ const SERVICES_LINKS = [
   "Fotografía de Retrato",
   "Fotografía de Bodas",
   "Cobertura de Eventos",
+  "Fotografía de Producto",
+  "Sesiones de fotos en estudio",
 ];
 
 const SOCIAL_LINKS = [
@@ -39,8 +41,7 @@ export const Footer = () => {
               className="footer__logo"
             />
             <p className="footer__tagline">
-              Capturando los momentos más hermosos de la vida con arte y
-              precisión.
+              Capturando momentos que duran para siempre.
             </p>
           </div>
 
