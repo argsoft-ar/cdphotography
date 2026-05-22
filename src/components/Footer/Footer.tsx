@@ -1,4 +1,5 @@
 import "./Footer.css";
+import Logo from "../../../public/logo.png";
 
 const QUICK_LINKS = [
   { label: "Inicio", href: "#home" },
@@ -32,7 +33,11 @@ export const Footer = () => {
       <div className="footer__inner">
         <div className="footer__grid">
           <div className="footer__col">
-            <h3 className="footer__brand">CD Photography</h3>
+            <img
+              src={Logo}
+              alt="CD Photography Logo"
+              className="footer__logo"
+            />
             <p className="footer__tagline">
               Capturando los momentos más hermosos de la vida con arte y
               precisión. Con base en Buenos Aires, disponibles en todo el mundo.

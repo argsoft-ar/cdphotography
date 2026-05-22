@@ -23,6 +23,12 @@
   margin-bottom: var(--spacing-md);
 }
 
+.footer__logo {
+  width: 300px;
+  height: auto;
+  margin-bottom: var(--spacing-md);
+}
+
 .footer__tagline {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
