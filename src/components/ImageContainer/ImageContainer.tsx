@@ -41,8 +41,11 @@ export const ImageContainer = ({
         .delivery(quality("auto"))
         .resize(
           imageHeight
-            ? fill().gravity(autoGravity()).width(imageWidth).height(imageHeight)
-            : fill().gravity(autoGravity()).width(imageWidth)
+            ? fill()
+                .gravity(autoGravity())
+                .width(imageWidth)
+                .height(imageHeight)
+            : fill().gravity(autoGravity()).width(imageWidth),
         )
     : null;
 
