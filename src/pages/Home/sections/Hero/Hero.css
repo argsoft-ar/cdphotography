@@ -53,7 +53,7 @@
 
 @media (max-width: 768px) {
   .hero__title {
-    font-size: var(--font-size-2xl);
+    font-size: 30px;
   }
 
   .hero__subtitle {

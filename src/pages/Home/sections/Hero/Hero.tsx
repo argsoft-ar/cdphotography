@@ -17,15 +17,14 @@ export const Hero = () => {
         <div className="hero__content">
           <img className="logo__image" src={logo} alt="CD Photography Logo" />
           <h1 className="hero__title">
-            Capturando momentos
-            <br />
-            que duran para siempre
+            Capturando momentos que duran para siempre
           </h1>
           <p className="hero__subtitle">
-            Fotos que te hacen volver a ese instante, una y otra vez.
-            <br />
-            Fotografía de eventos y sesiones con una mirada natural y cuidada.
+            Fotos que te hacen volver a ese instante, una y otra vez. Fotografía
+            de eventos y sesiones con una mirada natural y cuidada.
           </p>
+
+          <p className="hero__subtitle"></p>
           <div className="hero__actions">
             <Button variant="primary" size="lg">
               <a href="#work">Ver Mis Trabajos</a>
