@@ -89,7 +89,10 @@ export const Footer = () => {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {year} CD Photography. Todos los derechos reservados.</p>
+          <p>
+            &copy; {year} Dai Cabello Photography. Todos los derechos
+            reservados.
+          </p>
           <p className="footer__credit">
             Desarrollado por{" "}
             <a

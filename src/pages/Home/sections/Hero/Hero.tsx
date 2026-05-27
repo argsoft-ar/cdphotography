@@ -26,10 +26,10 @@ export const Hero = () => {
 
           <p className="hero__subtitle"></p>
           <div className="hero__actions">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="md">
               <a href="#work">Ver Mis Trabajos</a>
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="md">
               <a href="#contact">Contactanos</a>
             </Button>
           </div>
