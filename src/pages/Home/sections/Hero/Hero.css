@@ -13,7 +13,7 @@
 }
 
 .logo__image {
-  width: 400px;
+  width: 300px;
   height: auto;
 }
 
@@ -28,7 +28,7 @@
 
 .hero__title {
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   line-height: 1.1;
