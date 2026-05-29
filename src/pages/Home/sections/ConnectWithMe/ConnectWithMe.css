@@ -134,6 +134,9 @@
 }
 
 .connect__social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   transition: color var(--transition-fast);
@@ -141,6 +144,12 @@
 
 .connect__social-link:hover {
   color: var(--color-primary);
+}
+
+.connect__social-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
