@@ -8,6 +8,7 @@
 .image-grid__item {
   overflow: hidden;
   opacity: 0;
+  cursor: pointer;
   animation: gridItemFadeIn 400ms ease forwards;
   animation-delay: calc(var(--item-index, 0) * 80ms);
 }
