@@ -22,8 +22,8 @@ export const Lightbox = ({
   onPrev,
   onNext,
 }: LightboxProps) => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const backdropRef = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const current = images[currentIndex];
@@ -38,6 +38,13 @@ export const Lightbox = ({
     : null;
 
   useEffect(() => {
+    dialogRef.current?.showModal();
+    return () => {
+      dialogRef.current?.close();
+    };
+  }, []);
+
+  useEffect(() => {
     setLoaded(false);
   }, [currentIndex]);
 
@@ -47,7 +54,10 @@ export const Lightbox = ({
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+      }
       if (e.key === "ArrowLeft") onPrev();
       if (e.key === "ArrowRight") onNext();
 
@@ -55,23 +65,21 @@ export const Lightbox = ({
         const focusableSelectors =
           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
         const focusableElements = Array.from(
-          backdropRef.current?.querySelectorAll<HTMLElement>(
+          dialogRef.current?.querySelectorAll<HTMLElement>(
             focusableSelectors,
           ) ?? [],
         );
         if (focusableElements.length === 0) return;
         const first = focusableElements[0];
-        const last = focusableElements[focusableElements.length - 1];
+        const last = focusableElements.at(-1)!;
         if (e.shiftKey) {
           if (document.activeElement === first) {
             e.preventDefault();
             last.focus();
           }
-        } else {
-          if (document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-          }
+        } else if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
         }
       }
     };
@@ -80,22 +88,18 @@ export const Lightbox = ({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose, onPrev, onNext]);
 
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === backdropRef.current) onClose();
+  const handleDialogClick = (e: React.MouseEvent<HTMLDialogElement>) => {
+    if (e.target === dialogRef.current) onClose();
   };
 
   return (
-    <div
+    <dialog
+      ref={dialogRef}
       className="lightbox"
-      role="dialog"
-      aria-modal="true"
       aria-label={current?.alt ?? "Image lightbox"}
+      onClick={handleDialogClick}
     >
-      <div
-        className="lightbox__backdrop"
-        ref={backdropRef}
-        onClick={handleBackdropClick}
-      >
+      <div className="lightbox__backdrop">
         <button
           className="lightbox__close"
           ref={closeButtonRef}
@@ -151,6 +155,6 @@ export const Lightbox = ({
           {currentIndex + 1} / {images.length}
         </div>
       </div>
-    </div>
+    </dialog>
   );
 };
