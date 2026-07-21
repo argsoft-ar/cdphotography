@@ -21,7 +21,7 @@ export const Hero = () => {
           </h1>
           <p className="hero__subtitle">
             Fotos que te hacen volver a ese instante, una y otra vez. Fotografía
-            de eventos y sesiones con una mirada natural y cuidada.
+            profesional para eventos, familias y marcas.
           </p>
 
           <p className="hero__subtitle"></p>
@@ -30,7 +30,7 @@ export const Hero = () => {
               <a href="#work">Ver Mis Trabajos</a>
             </Button>
             <Button variant="outline" size="md">
-              <a href="#contact">Contactanos</a>
+              <a href="#contact">Contactame</a>
             </Button>
           </div>
         </div>

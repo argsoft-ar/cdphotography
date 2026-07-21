@@ -26,6 +26,12 @@
 }
 
 .our-work__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.our-work__text {
   font-size: var(--font-size-md);
   color: var(--color-text-muted);
   margin-bottom: var(--spacing-2xl);

@@ -4,7 +4,8 @@ import Logo from "../../../public/logo.png";
 const QUICK_LINKS = [
   { label: "Inicio", href: "#home" },
   { label: "Trabajos", href: "#work" },
-  { label: "Nosotros", href: "#about" },
+  { label: "Servicios", href: "#services" },
+  { label: "Sobre mí", href: "#about" },
   { label: "Contacto", href: "#contact" },
 ];
 
@@ -96,7 +97,7 @@ export const Footer = () => {
           </div>
 
           <div className="footer__col">
-            <h4 className="footer__heading">Seguinos</h4>
+            <h4 className="footer__heading">Seguime</h4>
             <ul className="footer__list">
               {SOCIAL_LINKS.map((link) => (
                 <li key={link.label}>
