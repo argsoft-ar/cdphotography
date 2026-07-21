@@ -1,7 +1,17 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./ConnectWithMe.css";
 import { Button } from "../../../../components/Button/Button";
-import { MapPin, Phone, Users } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Users,
+  Loader2,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
+
+type FormStatus = "idle" | "loading" | "success" | "error";
 
 const SOCIAL_LINKS = [
   {
@@ -41,25 +51,62 @@ const SOCIAL_LINKS = [
 ];
 
 export const ConnectWithMe = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "¡Hola! Me gustaría hacer una consulta.",
   });
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const resetForm = () => {
+    setForm({
+      name: "",
+      email: "",
+      message: "¡Hola! Me gustaría hacer una consulta.",
+    });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = "5491123987786";
-    const text = `Hola, mi nombre es ${form.name}. Mi correo es ${form.email}.\n\n${form.message}`;
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, "_blank");
+
+    if (!formRef.current) return;
+
+    setStatus("loading");
+    setStatusMessage("");
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      setStatus("success");
+      setStatusMessage("¡Mensaje enviado con éxito! Te responderé pronto.");
+      resetForm();
+
+      setTimeout(() => {
+        setStatus("idle");
+        setStatusMessage("");
+      }, 5000);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+      setStatusMessage(
+        "Hubo un error al enviar el mensaje. Por favor, intentá de nuevo.",
+      );
+
+      setTimeout(() => {
+        setStatus("idle");
+        setStatusMessage("");
+      }, 5000);
+    }
   };
+
+  const isLoading = status === "loading";
 
   return (
     <section id="contact" className="connect">
@@ -70,26 +117,37 @@ export const ConnectWithMe = () => {
           <p className="connect__eyebrow">Hola</p>
           <h2 className="connect__title">Conectemos</h2>
           <p className="connect__subtitle">
-            ¿Tenés un proyecto en mente o simplemente querés charlar? Escribime
-            y te responderé lo antes posible.
+            Cada historia merece ser contada de una forma única. Si sentís que
+            soy la fotógrafa indicada para acompañarte en ese momento
+            importante, me encantaría que charlemos y conocer tu proyecto para
+            crear imágenes que perduren en el tiempo.
           </p>
         </div>
 
         <div className="connect__body">
-          <form className="connect__form" onSubmit={handleSubmit}>
+          <form ref={formRef} className="connect__form" onSubmit={handleSubmit}>
+            {statusMessage && (
+              <div className={`connect__status connect__status--${status}`}>
+                {status === "success" && <CheckCircle size={20} />}
+                {status === "error" && <XCircle size={20} />}
+                <span>{statusMessage}</span>
+              </div>
+            )}
+
             <div className="connect__field">
               <label htmlFor="name" className="connect__label">
                 Nombre
               </label>
               <input
                 id="name"
-                name="name"
+                name="user_name"
                 type="text"
                 className="connect__input"
                 placeholder="Tu nombre completo"
                 value={form.name}
-                onChange={handleChange}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
+                disabled={isLoading}
               />
             </div>
 
@@ -99,13 +157,14 @@ export const ConnectWithMe = () => {
               </label>
               <input
                 id="email"
-                name="email"
+                name="user_email"
                 type="email"
                 className="connect__input"
                 placeholder="tu@email.com"
                 value={form.email}
-                onChange={handleChange}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
+                disabled={isLoading}
               />
             </div>
 
@@ -120,13 +179,26 @@ export const ConnectWithMe = () => {
                 placeholder="Contanos sobre tu proyecto..."
                 rows={6}
                 value={form.message}
-                onChange={handleChange}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
+                disabled={isLoading}
               />
             </div>
 
-            <Button variant="primary" size="lg" type="submit">
-              Enviar Mensaje
+            <Button
+              variant="primary"
+              size="lg"
+              type="submit"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 size={20} className="connect__spinner" />
+                  Enviando...
+                </>
+              ) : (
+                "Enviar Mensaje"
+              )}
             </Button>
           </form>
 
@@ -138,17 +210,11 @@ export const ConnectWithMe = () => {
               </h4>
               <p className="connect__info-text">+54 9 11 2398-7786</p>
             </div>
+
             <div className="connect__info-block">
               <h4 className="connect__info-heading">
                 {" "}
-                <MapPin size={20} /> Ubicación
-              </h4>
-              <p className="connect__info-text">Buenos Aires, Argentina</p>
-            </div>
-            <div className="connect__info-block">
-              <h4 className="connect__info-heading">
-                {" "}
-                <Users size={20} /> Seguinos
+                <Users size={20} /> Seguime en redes
               </h4>
               <div className="connect__socials">
                 {SOCIAL_LINKS.map((link) => (
@@ -163,6 +229,27 @@ export const ConnectWithMe = () => {
                     {link.label}
                   </a>
                 ))}
+              </div>
+            </div>
+            <div className="connect__info-block">
+              <h4 className="connect__info-heading">
+                {" "}
+                <MapPin size={20} /> Ubicación
+              </h4>
+              <p className="connect__info-text">
+                Lomas de Zamora, Buenos Aires, Argentina
+              </p>
+              <div className="iframe">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19935.234051134375!2d-58.43733508664113!3d-34.750784255031895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd261abf8fb75%3A0xd3b4119f62723032!2sLomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1784648649562!5m2!1ses-419!2sar"
+                  title="Mapa de ubicación - Lomas de Zamora"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
               </div>
             </div>
           </div>

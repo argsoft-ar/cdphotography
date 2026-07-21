@@ -2,9 +2,16 @@ import "./AboutUs.css";
 import { ImageContainer } from "../../../../components/ImageContainer/ImageContainer";
 
 const STATS = [
-  { value: "500+", label: "Sesiones" },
-  { value: "10", label: "Años de Experiencia" },
-  { value: "200+", label: "Clientes Felices" },
+  { value: "+500", label: "Sesiones" },
+  { value: "+9", label: "Años de Experiencia" },
+  { value: "+200", label: "Clientes Felices" },
+];
+
+const HIGHLIGHTS = [
+  "Estudio en Lomas de Zamora",
+  "Docente de Fotografía y Redes Sociales",
+  "Entrega rápida",
+  "Atención personalizada",
 ];
 
 export const AboutUs = () => {
@@ -46,6 +53,19 @@ export const AboutUs = () => {
             Sigo trabajando en cada proyecto con el mismo compromiso: crear
             imágenes que te hagan volver a ese momento, una y otra vez.
           </p>
+
+          <ul className="about__highlights">
+            {HIGHLIGHTS.map((highlight, index) => (
+              <li
+                className="about__highlight-item"
+                key={highlight}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {highlight}
+              </li>
+            ))}
+          </ul>
+
           <div className="about__stats">
             {STATS.map((stat) => (
               <div className="about__stat" key={stat.label}>

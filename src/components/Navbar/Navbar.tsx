@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { label: "Inicio", href: "#home" },
   { label: "Trabajos", href: "#work" },
   { label: "Servicios", href: "#services" },
-  { label: "Nosotros", href: "#about" },
+  { label: "Sobre mí", href: "#about" },
   { label: "Contacto", href: "#contact" },
 ];
 
@@ -21,6 +21,7 @@ export const Navbar = () => {
         </a>
 
         <button
+          type="button"
           className={`navbar__toggle ${menuOpen ? "navbar__toggle--open" : ""}`}
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle navigation"

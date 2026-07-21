@@ -2,6 +2,7 @@ import React from "react";
 import "./Card.css";
 import { ImageContainer } from "../ImageContainer/ImageContainer";
 import { Button } from "../Button/Button";
+import { Check } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface CardProps {
@@ -18,6 +19,8 @@ interface CardProps {
   loading?: boolean;
   href?: string;
   onClick?: () => void;
+  variant?: "default" | "pricing";
+  featured?: boolean;
 }
 
 export const Card = ({
@@ -34,10 +37,18 @@ export const Card = ({
   loading,
   href,
   onClick,
+  variant = "default",
+  featured = false,
 }: CardProps) => {
+  const variantClass = variant !== "default" ? `card--${variant}` : "";
+  const featuredClass = featured ? "card--featured" : "";
+  const cardClasses = `card ${variantClass} ${featuredClass} ${className}`
+    .trim()
+    .replace(/\s+/g, " ");
+
   if (loading) {
     return (
-      <div className={`card ${className}`.trim()}>
+      <div className={cardClasses}>
         {image && <div className="card__skeleton-image" />}
         <div className="card__body card__skeleton">
           <div className="card__skeleton-title" />
@@ -51,8 +62,31 @@ export const Card = ({
     );
   }
 
+  const renderItems = () => {
+    if (!items || items.length === 0) return null;
+
+    if (variant === "pricing") {
+      return (
+        <ul className="card__checklist">
+          {items.map((item) => (
+            <li key={item} className="card__checklist-item">
+              <Check className="card__checklist-icon" size={18} />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
+    return items.map((item) => (
+      <p key={item} className="card__description">
+        {item}
+      </p>
+    ));
+  };
+
   return (
-    <div className={`card ${className}`.trim()}>
+    <div className={cardClasses}>
       {image && (
         <div className="card__image">
           <ImageContainer src={image} alt={title ?? ""} height="200px" />
@@ -67,13 +101,10 @@ export const Card = ({
           )}
           {title && <h3 className="card__title">{title}</h3>}
         </div>
-        {items
-          ? items.map((item) => (
-              <p key={item} className="card__description">
-                {item}
-              </p>
-            ))
-          : description && <p className="card__description">{description}</p>}
+        {renderItems()}
+        {!items && description && (
+          <p className="card__description">{description}</p>
+        )}
         {showButton && (
           <Button
             variant="outline"

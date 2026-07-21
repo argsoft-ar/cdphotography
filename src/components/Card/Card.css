@@ -136,3 +136,64 @@
   margin-top: var(--spacing-xs);
   animation: card-skeleton-pulse 1.5s ease-in-out infinite;
 }
+
+/* Pricing variant */
+.card--pricing {
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.card--pricing .header__card {
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.card--pricing .card__icon {
+  margin-bottom: var(--spacing-sm);
+}
+
+.card--pricing .card__title {
+  font-size: var(--font-size-xl);
+}
+
+.card--pricing .card__body {
+  gap: var(--spacing-md);
+}
+
+/* Featured variant */
+.card--featured {
+  border-color: var(--color-primary);
+  border-width: 2px;
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.card--featured:hover {
+  box-shadow: 0 12px 24px var(--color-shadow);
+  border-color: var(--color-primary-hover);
+}
+
+/* Checklist styles for pricing */
+.card__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  text-align: left;
+}
+
+.card__checklist-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.card__checklist-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}

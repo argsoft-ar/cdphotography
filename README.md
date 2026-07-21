@@ -44,7 +44,7 @@ src/
 │   ├── ImageGrid/             # Grilla responsive de imágenes con animaciones escalonadas
 │   ├── Loading/               # Pantalla de carga inicial a pantalla completa
 │   ├── Navbar/                # Navbar fija con menú hamburguesa y efecto glass
-│   └── Tabs/                  # Pestañas con auto-rotación y accesibilidad (ARIA)
+│   └── Tabs/                  # Pestañas con auto-rotación
 ├── pages/
 │   └── Home/
 │       ├── Home.tsx

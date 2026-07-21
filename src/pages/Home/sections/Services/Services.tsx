@@ -54,7 +54,7 @@ export const Services = () => {
   return (
     <section id="services" className="services">
       <div className="services__inner">
-        <p className="services__eyebrow">Lo Que Ofrecemos</p>
+        <p className="services__eyebrow">Lo Que Ofrezco</p>
         <h2 className="services__title">Servicios</h2>
         <p className="services__subtitle">
           Servicios fotográficos pensados para acompañarte en cada momento
@@ -85,8 +85,8 @@ export const Services = () => {
               icon={service.icon}
               items={service.items}
               showButton
-              textButton="Consultame"
-              href="#contact"
+              textButton="Ver paquetes"
+              href="#packages"
             />
           ))}
         </div>
