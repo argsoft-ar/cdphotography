@@ -109,8 +109,8 @@
   }
 
   .how-it-works__step {
-    flex-direction: row;
-    text-align: left;
+    flex-direction: column;
+    text-align: center;
     padding: var(--spacing-md);
     gap: var(--spacing-md);
   }
