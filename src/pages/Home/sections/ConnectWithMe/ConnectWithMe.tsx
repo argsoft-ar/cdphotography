@@ -242,6 +242,7 @@ export const ConnectWithMe = () => {
               <div className="iframe">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19935.234051134375!2d-58.43733508664113!3d-34.750784255031895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd261abf8fb75%3A0xd3b4119f62723032!2sLomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1784648649562!5m2!1ses-419!2sar"
+                  title="Mapa de ubicación - Lomas de Zamora"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}

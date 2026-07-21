@@ -21,6 +21,7 @@ export const Navbar = () => {
         </a>
 
         <button
+          type="button"
           className={`navbar__toggle ${menuOpen ? "navbar__toggle--open" : ""}`}
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle navigation"
