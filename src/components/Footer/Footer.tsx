@@ -123,7 +123,7 @@ export const Footer = () => {
           <p className="footer__credit">
             Desarrollado por{" "}
             <a
-              href="https://argsoft.vercel.app/"
+              href="https://www.argsoft.ar/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer__credit-link"
