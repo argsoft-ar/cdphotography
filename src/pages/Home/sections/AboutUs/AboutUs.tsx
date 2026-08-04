@@ -20,7 +20,7 @@ export const AboutUs = () => {
       <div className="about__inner">
         <div className="about__image">
           <ImageContainer
-            publicId="FOTO_1B_amgp5o"
+            publicId="FOTO_DE_PERFIL_2026_3_2_s9flhe"
             alt="CD Photography — el fotógrafo en acción"
             height="100%"
           />
